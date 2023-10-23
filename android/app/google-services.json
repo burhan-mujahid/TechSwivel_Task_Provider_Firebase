@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "604436428380",
+    "project_id": "techswivel-task-1",
+    "storage_bucket": "techswivel-task-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604436428380:android:41f31e20725b5730505899",
+        "android_client_info": {
+          "package_name": "com.burhan.techswivel.tstask1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1fOs_ysG4eOMPJNjpTMazL0WPUafJAw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
