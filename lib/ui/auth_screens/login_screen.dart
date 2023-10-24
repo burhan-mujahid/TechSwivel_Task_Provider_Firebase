@@ -2,8 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tstask1/ui/auth_screens/signup_screen.dart';
+import 'package:tstask1/ui/user_screens/main_screen.dart';
+import 'package:tstask1/widgets/auth_screen_heading.dart';
 import 'package:tstask1/widgets/credential_input_field.dart';
 
+import '../../utils/utils.dart';
 import '../../widgets/auth_button.dart';
 import '../../widgets/password_input_field.dart';
 
@@ -44,11 +47,11 @@ class _LoginScreenState extends State<LoginScreen> {
         loading = false;
       });
 
-      // Utils().toastMessage(value.user!.email.toString());
-      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      Utils().toastMessage(value.user!.email.toString());
+      Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()));
     }).onError((error, stackTrace) {
       debugPrint(error.toString());
-      //Utils().toastMessage(error.toString());
+      Utils().toastMessage(error.toString());
       setState(() {
         loading = false;
       });
@@ -73,6 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
+              AuthScreenHeading(heading: 'Login', subHeading: 'Login to your account'),
 
 
               Form(
@@ -117,7 +122,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         }
                         return null;
 
-                      }, inputFormatter: FilteringTextInputFormatter.singleLineFormatter,
+                      },
+                      inputFormatter: FilteringTextInputFormatter.singleLineFormatter,
                     ),
                   ],
                 ),
